@@ -1,5 +1,13 @@
 # lhd.te
 
+binder_use(lhd)
+
+# lhd uses the system suspend AIDL service for its wake locks.
+allow lhd hal_system_suspend_service:service_manager find;
+
+# lhd uses Android's fwmark client socket to connect through netd.
+allow lhd netd:unix_stream_socket connectto;
+
 allow lhd {
     efs_file
     sec_efs_file

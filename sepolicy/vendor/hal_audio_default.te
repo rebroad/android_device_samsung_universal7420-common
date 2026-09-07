@@ -17,3 +17,4 @@ allow hal_audio_default sysfs_earsmart:lnk_file read;
 wakelock_use(hal_audio_default)
 
 get_prop(hal_audio_default, vendor_audio_prop)
+get_prop(hal_audio_default, default_prop)

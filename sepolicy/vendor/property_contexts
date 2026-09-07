@@ -24,8 +24,11 @@ hw.revision                      u:object_r:modemloader_prop:s0
 ro.cbd.dt_revision               u:object_r:modemloader_prop:s0
 ril.cbd.dt_revision              u:object_r:modemloader_prop:s0
 ro.modemloader.done              u:object_r:modemloader_prop:s0
+init.svc.macloader               u:object_r:macloader_service_status_prop:s0 exact string
+persist.sys.cpboot               u:object_r:vendor_cpboot_prop:s0 exact string
 
 # NFC
+ro.nfc.port                     u:object_r:vendor_nfc_prop:s0 exact string
 ro.debug_level                   u:object_r:vendor_nfc_prop:s0
 persist.nfc.log.index            u:object_r:vendor_nfc_prop:s0
 vendor.nfc.fw.                   u:object_r:vendor_nfc_prop:s0 
@@ -36,6 +39,7 @@ ro.vendor.cscsupported           u:object_r:vendor_omx_prop:s0
 ro.vendor.debug.omx.             u:object_r:vendor_omx_prop:s0
 
 # Radio
+ro.gps.chip.vendor              u:object_r:vendor_radio_prop:s0 exact string
 persist.ril.interfaceconf.       u:object_r:radio_prop:s0
 persist.radio.multisim.          u:object_r:vendor_radio_prop:s0
 ro.multisim.                     u:object_r:vendor_radio_prop:s0

@@ -230,4 +230,4 @@ on boot
 
     # DT2W
     chown system system /sys/class/dt2w/enabled
-    chmod 0644 /sys/class/dt2w/enabled
+    chmod 0664 /sys/class/dt2w/enabled

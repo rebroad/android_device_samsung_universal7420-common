@@ -7,3 +7,4 @@ get_prop(bootanim, userspace_reboot_exported_prop)
 allow bootanim audio_service:service_manager find;
 allow bootanim mediametrics:binder call;
 allow bootanim mediametrics_service:service_manager find;
+dontaudit bootanim system_data_file:dir search;
