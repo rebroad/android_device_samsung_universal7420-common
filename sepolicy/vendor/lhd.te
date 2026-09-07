@@ -8,6 +8,9 @@ allow lhd hal_system_suspend_service:service_manager find;
 # lhd uses Android's fwmark client socket to connect through netd.
 allow lhd netd:unix_stream_socket connectto;
 
+# netd retains and uses the connected lhd socket while applying fwmarks.
+allow netd lhd:fd use;
+
 allow lhd {
     efs_file
     sec_efs_file
