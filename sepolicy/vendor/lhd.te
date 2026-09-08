@@ -11,6 +11,10 @@ allow lhd netd:unix_stream_socket connectto;
 # netd retains and uses the connected lhd socket while applying fwmarks.
 allow netd lhd:fd use;
 
+# netd reads and writes the connected legacy lhd TCP endpoint while applying
+# the socket's network mark.
+allow netd lhd:tcp_socket { read write };
+
 allow lhd {
     efs_file
     sec_efs_file
