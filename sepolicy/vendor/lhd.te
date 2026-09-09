@@ -13,7 +13,7 @@ allow netd lhd:fd use;
 
 # netd reads and writes the connected legacy lhd TCP endpoint while applying
 # the socket's network mark.
-allow netd lhd:tcp_socket { getopt read write };
+allow netd lhd:tcp_socket { getopt read setopt write };
 
 allow lhd {
     efs_file
