@@ -44,8 +44,3 @@ allow kernel {
 # Allow kernel to search tmpfs
 allow kernel tmpfs:dir search;
 
-allow kernel kernel:capability chown;
-allow kernel self:capability { chown mknod sys_module};
-allow kernel self:capability { dac_override dac_read_search };
-allow kernel self:system module_request;
-
