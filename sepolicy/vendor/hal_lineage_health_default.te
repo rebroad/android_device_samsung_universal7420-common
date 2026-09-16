@@ -1,5 +1,7 @@
 # hal_lineage_health_default.te
 allow hal_lineage_health_default sysfs_battery: dir search;
-allow hal_lineage_health_default sysfs_battery: file rw_file_perms;
+allow hal_lineage_health_default sysfs_battery: file r_file_perms;
+userdebug_or_eng(`allow hal_lineage_health_default sysfs_battery:file { write append };')
 allow hal_lineage_health_default sysfs_batteryinfo: dir search;
-allow hal_lineage_health_default sysfs_batteryinfo: file rw_file_perms;
+allow hal_lineage_health_default sysfs_batteryinfo: file r_file_perms;
+userdebug_or_eng(`allow hal_lineage_health_default sysfs_batteryinfo:file { write append };')

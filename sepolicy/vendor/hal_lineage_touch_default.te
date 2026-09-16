@@ -10,7 +10,15 @@ allow hal_lineage_touch_default{
     sysfs_sec_touchkey
     sysfs_sec_tsp
     sysfs_input
-}:file rw_file_perms;
+}:file r_file_perms;
+
+userdebug_or_eng(`
+allow hal_lineage_touch_default{
+    sysfs_sec_touchkey
+    sysfs_sec_tsp
+    sysfs_input
+}:file { write append };
+')
 
 allow hal_lineage_touch_default sysfs_sec_touchkey:lnk_file read;
 allow hal_lineage_touch_default sysfs_input:lnk_file read;

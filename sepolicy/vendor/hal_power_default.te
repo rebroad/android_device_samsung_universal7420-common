@@ -24,6 +24,20 @@ allow hal_power_default{
     sysfs_sec_tsp
     sysfs_input
     sysfs_touchscreen_writable
-}:file rw_file_perms;
+}:file r_file_perms;
+
+userdebug_or_eng(`
+allow hal_power_default{
+    pm_qos_device
+    sysfs_backlight_writable
+    sysfs_batteryinfo
+    sysfs_devices_system_cpu
+    sysfs_graphics
+    sysfs_light
+    sysfs_sec_tsp
+    sysfs_input
+    sysfs_touchscreen_writable
+}:file { write append };
+')
 
 allow hal_power_default sysfs_sec_tsp:lnk_file read;

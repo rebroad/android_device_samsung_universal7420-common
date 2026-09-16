@@ -1,4 +1,5 @@
 # hal_ir_default.te
 
 allow hal_ir_default sysfs_sensors: dir r_dir_perms;
-allow hal_ir_default sysfs_sensors: file rw_file_perms;
+allow hal_ir_default sysfs_sensors: file r_file_perms;
+userdebug_or_eng(`allow hal_ir_default sysfs_sensors:file { write append };')
