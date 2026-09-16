@@ -165,7 +165,11 @@ include device/lineage/sepolicy/exynos/sepolicy.mk
 BOARD_SEPOLICY_TEE_FLAVOR := mobicore
 include device/samsung_slsi/sepolicy/sepolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
+# Legacy debug builds retain the historical escape hatch while the release
+# variant must enforce the platform neverallow checks.
+ifneq ($(TARGET_BUILD_VARIANT),user)
 SELINUX_IGNORE_NEVERALLOWS := true
+endif
 
 # Shims
 TARGET_LD_SHIM_LIBS += \
