@@ -1,4 +1,5 @@
 # appdomain.te
+userdebug_or_eng(`
 r_dir_file({ appdomain -isolated_app }, sysfs)
 r_dir_file({ appdomain -isolated_app }, sysfs_thermal)
 r_dir_file({ appdomain -isolated_app }, sysfs_camera)
@@ -24,3 +25,4 @@ r_dir_file({ appdomain -isolated_app }, sysfs_graphics)
 r_dir_file({ appdomain -isolated_app }, proc_input_devices)
 r_dir_file({ appdomain -isolated_app }, proc_interrupts)
 r_dir_file({ appdomain -isolated_app }, proc)
+')
