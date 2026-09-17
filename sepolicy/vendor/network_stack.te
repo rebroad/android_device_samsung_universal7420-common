@@ -1,2 +1,0 @@
-# The legacy tethering maps are mounted with the base fs_bpf label.
-allow network_stack fs_bpf:file { read write };
