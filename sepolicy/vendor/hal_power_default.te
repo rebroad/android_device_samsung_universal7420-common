@@ -1,8 +1,5 @@
 # hal_power_default.te
 
-# The legacy power HAL uses DAC override while applying its power policy.
-allow hal_power_default self:capability dac_override;
-
 allow hal_power_default{
     sysfs_backlight_writable
     sysfs_batteryinfo
