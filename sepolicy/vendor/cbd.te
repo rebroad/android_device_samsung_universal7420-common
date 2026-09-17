@@ -8,5 +8,3 @@ allow cbd sysfs_mipi:file r_file_perms;
 
 #audit2allow
 allow cbd sysfs:dir read;
-allow cbd sysfs_modem:dir { rw_file_perms search };
-allow cbd sysfs_modem:file rw_file_perms;
